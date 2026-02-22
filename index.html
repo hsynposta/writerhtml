@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WriterHTML</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Toolbar ── -->
+  <header id="toolbar" role="toolbar" aria-label="Formatting toolbar">
+    <span class="brand">WriterHTML</span>
+
+    <button id="btn-bold"      title="Bold (Ctrl+B)"     aria-label="Bold"><strong>B</strong></button>
+    <button id="btn-italic"    title="Italic (Ctrl+I)"   aria-label="Italic"><em>I</em></button>
+    <button id="btn-underline" title="Underline (Ctrl+U)" aria-label="Underline"><u>U</u></button>
+    <button id="btn-strike"    title="Strikethrough"      aria-label="Strikethrough"><s>S</s></button>
+
+    <span class="toolbar-sep" role="separator"></span>
+
+    <select id="sel-heading" title="Heading level" aria-label="Heading level">
+      <option value="">Heading…</option>
+      <option value="h1">H1 — Title</option>
+      <option value="h2">H2 — Section</option>
+      <option value="h3">H3 — Sub-section</option>
+      <option value="p">¶ Paragraph</option>
+    </select>
+
+    <span class="toolbar-sep" role="separator"></span>
+
+    <button id="btn-ul"    title="Bullet list"   aria-label="Bullet list">• List</button>
+    <button id="btn-ol"    title="Numbered list" aria-label="Numbered list">1. List</button>
+    <button id="btn-quote" title="Block quote"   aria-label="Block quote">" Quote</button>
+    <button id="btn-hr"    title="Horizontal rule" aria-label="Horizontal rule">— Rule</button>
+
+    <span class="toolbar-sep" role="separator"></span>
+
+    <div class="toolbar-right">
+      <span id="status" aria-live="polite">0 words · 0 chars</span>
+      <button id="btn-new"    title="New document"       aria-label="New document">New</button>
+      <button id="btn-export" title="Export as HTML"     aria-label="Export as HTML">Export ↓</button>
+    </div>
+  </header>
+
+  <!-- ── Writing area ── -->
+  <main id="main">
+    <div id="editor-wrap">
+      <input
+        id="doc-title"
+        type="text"
+        placeholder="Document title…"
+        aria-label="Document title"
+        autocomplete="off"
+        spellcheck="true"
+      >
+      <div
+        id="editor"
+        contenteditable="true"
+        role="textbox"
+        aria-multiline="true"
+        aria-label="Document body"
+        data-placeholder="Start writing…"
+        spellcheck="true"
+      ></div>
+    </div>
+  </main>
+
+  <!-- ── Export modal ── -->
+  <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal">
+      <h2 id="modal-title">Export as HTML</h2>
+      <textarea id="html-output" readonly aria-label="Generated HTML"></textarea>
+      <div class="modal-actions">
+        <button id="btn-close-modal">Close</button>
+        <button id="btn-copy-html">Copy HTML</button>
+        <button id="btn-download-html">Download .html</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
