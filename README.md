@@ -6,6 +6,6 @@ A visual writing system for book writing and academic structuring.
 - Open NodeWriter: NODEWRITER.html
 
 ## Screens
-![Main Page](assets/main-page.jpg)
-![Overall View](assets/overall-view.jpg)
-![Text Editor](assets/text-editor.jpg)
+![Main Page](main-page.jpg)
+![Overall View](overall-view.jpg)
+![Text Editor](text-editor.jpg)
